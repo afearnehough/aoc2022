@@ -10,7 +10,7 @@ type Day = (i32, fn(&String));
 
 fn run(days: &[Day]) {
     for (day, handler) in days {
-        println!("\n\n======== Day {} ========\n\n", day);
+        println!("\n======== Day {} ========\n", day);
 
         let mut input = match File::open(format!("input/day{}.txt", day)) {
             Ok(file) => file,
@@ -30,7 +30,7 @@ fn main() {
     let days: Vec<Day> = vec![
         (1, day1::handler)
     ];
-    
+
     if args.len() > 1 {
         if let Ok(value) = args[1].parse::<usize>() {
             if value > 0 && value <= days.len() {
