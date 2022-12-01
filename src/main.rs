@@ -13,13 +13,13 @@ fn run(days: &[Day]) {
     for (day, handler) in days {
         println!("\n======== Day {} ========\n", day);
 
-        let mut input = match File::open(format!("input/day{}.txt", day)) {
+        let mut input_file = match File::open(format!("input/day{}.txt", day)) {
             Ok(file) => file,
             Err(_) => panic!("Couldn't find input for day {}!", day)
         };
 
         let mut input_data = String::new();
-        match input.read_to_string(&mut input_data) {
+        match input_file.read_to_string(&mut input_data) {
             Ok(_) => handler(&input_data),
             Err(_) => panic!("Unable to read input for day {}!", day)
         }
