@@ -5,6 +5,7 @@ use std::{
 };
 
 mod day1;
+mod day2;
 
 type Day = (i32, fn(&String));
 
@@ -28,7 +29,8 @@ fn run(days: &[Day]) {
 fn main() {
     let args: Vec<String> = env::args().collect();
     let days: Vec<Day> = vec![
-        (1, day1::handler)
+        (1, day1::handler),
+        (2, day2::handler)
     ];
 
     if args.len() > 1 {
