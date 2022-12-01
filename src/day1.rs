@@ -1,5 +1,5 @@
 pub fn handler(input: &String) {
-    let mut elves = Vec::new();
+    let mut elves = vec![0];
     for line in input.trim().split("\n").map(|line| line.trim()) {
         if line.is_empty() {
             elves.push(0);
