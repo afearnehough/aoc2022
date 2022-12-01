@@ -10,7 +10,7 @@ pub fn handler(input: &String) {
         }
     }
 
-    elves.sort_by(|elf1, elf2| elf1.cmp(&elf2));
+    elves.sort();
 
     println!("Highest calorie count: {}", elves[elves.len() - 1]);
     println!("Top 3 calories sum: {}", elves[elves.len()-3..].iter().sum::<i32>());
