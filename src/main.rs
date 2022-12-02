@@ -6,6 +6,7 @@ use std::{
 
 mod day1;
 mod day2;
+mod day3;
 
 type Day = (i32, fn(&String) -> Result<(), String>);
 
@@ -31,7 +32,8 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     let days: Vec<Day> = vec![
         (1, day1::handler),
-        (2, day2::handler)
+        (2, day2::handler),
+        (3, day3::handler),
     ];
 
     println!();
