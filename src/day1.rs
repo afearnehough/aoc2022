@@ -1,4 +1,4 @@
-pub fn handler(input: &String) {
+pub fn handler(input: &String) -> Result<(), String> {
     let mut elves = vec![0];
     for line in input.trim().split("\n").map(|line| line.trim()) {
         if line.is_empty() {
@@ -14,4 +14,6 @@ pub fn handler(input: &String) {
 
     println!("Highest calorie count: {}", elves[elves.len() - 1]);
     println!("Top 3 calories sum: {}", elves[elves.len()-3..].iter().sum::<i32>());
+
+    Ok(())
 }

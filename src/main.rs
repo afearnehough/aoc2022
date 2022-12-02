@@ -7,7 +7,7 @@ use std::{
 mod day1;
 mod day2;
 
-type Day = (i32, fn(&String));
+type Day = (i32, fn(&String) -> Result<(), String>);
 
 fn run(days: &[Day]) {
     for (day, handler) in days {
@@ -20,7 +20,12 @@ fn run(days: &[Day]) {
 
         let mut input_data = String::new();
         match input_file.read_to_string(&mut input_data) {
-            Ok(_) => handler(&input_data),
+            Ok(_) => {
+                match handler(&input_data) {
+                    Ok(_) => {},
+                    Err(err) => println!("Error! {}", err)
+                }
+            }
             Err(_) => panic!("Unable to read input for day {}!", day)
         }
     }
