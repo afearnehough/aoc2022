@@ -26,13 +26,27 @@ pub fn handler(input: &String) -> Result<(), String> {
         })
         .collect::<Result<Vec<_>, String>>()?;
 
-    // for round in rounds {
-    //     println!("{:?} = {}", round, score(round));
-    // }
 
-    println!("Total score: {}", rounds
-        .iter()
-        .fold(0, |sum, round| sum + score(*round)));
+    println!(
+        "Part A: Total score: {}",
+        rounds
+            .iter()
+            .fold(0, |sum, round| sum + score(*round)));
+
+    println!(
+        "Part B: Total score: {}",
+        rounds
+            .iter()
+            .fold(0, |sum, round| {
+                let (op, me) = *round;
+                let which = [
+                    2, 0, 1,
+                    0, 1, 2,
+                    1, 2, 0
+                ];
+
+                sum + score((op, which[me + op * 3]))
+            }));
 
     Ok(())
 }
