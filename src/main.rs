@@ -18,15 +18,11 @@ fn run(days: &[Day]) {
             Err(_) => panic!("Couldn't find input for day {}!", day)
         };
 
-        let mut input_data = String::new();
-        match input_file.read_to_string(&mut input_data) {
-            Ok(_) => {
-                match handler(&input_data) {
-                    Ok(_) => {},
-                    Err(err) => println!("Error! {}", err)
-                }
-            }
-            Err(_) => panic!("Unable to read input for day {}!", day)
+        let mut input = String::new();
+        input_file.read_to_string(&mut input).unwrap();
+        match handler(&input) {
+            Ok(_) => {},
+            Err(err) => println!("Error! {}", err)
         }
     }
 }
