@@ -28,13 +28,13 @@ pub fn handler(input: &String) -> Result<(), String> {
 
 
     println!(
-        "Part A: Total score: {}",
+        "Part A: {}",
         rounds
             .iter()
             .fold(0, |sum, round| sum + score(*round)));
 
     println!(
-        "Part B: Total score: {}",
+        "Part B: {}",
         rounds
             .iter()
             .fold(0, |sum, round| {

@@ -29,7 +29,7 @@ pub fn handler(input: &String) -> Result<(), String> {
             .sum::<i32>());
 
     println!(
-        "Part B: {:?}",
+        "Part B: {}",
         rucksacks
             .chunks(3)
             .map(|group| {

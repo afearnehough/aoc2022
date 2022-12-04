@@ -12,8 +12,8 @@ pub fn handler(input: &String) -> Result<(), String> {
 
     elves.sort();
 
-    println!("Part A: Highest calorie count: {}", elves[elves.len() - 1]);
-    println!("Part B: Top 3 calories sum: {}", elves[elves.len()-3..].iter().sum::<i32>());
+    println!("Part A: {}", elves[elves.len() - 1]);
+    println!("Part B: {}", elves[elves.len()-3..].iter().sum::<i32>());
 
     Ok(())
 }
