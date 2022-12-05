@@ -41,7 +41,7 @@ fn operate(input: &String, part: char) {
         }
     }
 
-    println!("Part {}: ", part);
+    print!("Part {}: ", part);
     for stack in stacks.iter().filter(|stack| !stack.is_empty()) {
         print!("{}", stack[stack.len() - 1] as char);
     }
