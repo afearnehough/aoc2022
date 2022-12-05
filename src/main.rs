@@ -8,6 +8,7 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
 
 type Day = (i32, fn(&String) -> Result<(), String>);
 
@@ -35,7 +36,8 @@ fn main() {
         (1, day1::handler),
         (2, day2::handler),
         (3, day3::handler),
-        (4, day4::handler)
+        (4, day4::handler),
+        (5, day5::handler)
     ];
 
     println!();
