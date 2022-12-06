@@ -1,4 +1,3 @@
-
 fn operate(input: &String, part: char) {
     let mut stacks: Vec<Vec<u8>> = Vec::new();
 

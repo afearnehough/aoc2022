@@ -9,6 +9,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 
 type Day = (i32, fn(&String) -> Result<(), String>);
 
@@ -37,7 +38,8 @@ fn main() {
         (2, day2::handler),
         (3, day3::handler),
         (4, day4::handler),
-        (5, day5::handler)
+        (5, day5::handler),
+        (6, day6::handler)
     ];
 
     println!();
@@ -53,6 +55,8 @@ fn main() {
         if let Ok(value) = args[1].parse::<usize>() {
             if value > 0 && value <= days.len() {
                 run(&[days[value - 1]]);
+            } else {
+                println!("Day not found");
             }
         }
     } else {
